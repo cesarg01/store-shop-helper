@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Shop Helper</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Playfair+Display"
+    />
+  </head>
+
+  <body>
+      <header>
+        <h1><a href="/">Shop Helper </a></h1>
+      </header>
+
+      <!-- Might need some JavaScript from https://stackoverflow.com/questions/57801054/how-to-redirect-to-another-page-after-click-on-submit-button-in-form-with-requir -->
+      <!-- url_for is used to send the input to the get_shop_days() function -->
+      <form
+        method="post"
+        id="shop_day_form"
+        action="{{ url_for('get_shop_days') }}"
+      >
+        <label>How many days is the shop for?</label><br />
+        <!-- Only allow positive numbers. When users enters -1 it will turn into 1. -->
+        <!-- https://stackoverflow.com/questions/32777184/html-input-for-positive-whole-numbers-only-type-number/32784911 -->
+        <!-- <input type="text" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" id="shop_days" required /> -->
+        <!-- This allows the user to enter 1 to 4 shop days. -->
+        <input
+          type="number"
+          id="shop_days"
+          name="shop_days"
+          min="1"
+          max="4"
+          required
+        />
+        <!-- Some more 'required' form controls... -->
+
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
