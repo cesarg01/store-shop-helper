@@ -1,8 +1,11 @@
 node_modules
-env
-old_guide
-IMG_3368
-main
+.env
+templates/old_guide.html
+IMG_3368.pdf
+IMG_3368.png
+main.py
 ocr_dump.csv
-package-lock
-package
+package-lock.json
+package.json
+path
+.venv
